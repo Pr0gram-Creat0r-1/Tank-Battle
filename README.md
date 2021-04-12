@@ -1,10 +1,4 @@
 # Tank Battle Simulator
-A simple tkinter game.
-
-Note: The "tanks" are supposed to resemble [DJI's Robomaster S1](https://www.dji.com/robomaster-s1).
-
-This game is still in development. Different versions may come out soon, but for now, just stick with this one.
-
 Instructions:
 1. Arrow keys to move
 2. Space key to fire (you can only fire forward)
@@ -20,6 +14,7 @@ Game Sounds and Music:
 
 Additional Notes:
 1. There's a glitch where if your shield is on and you're facing one way (left or right) and you press the key to move in the opposite direction, the shield automatically deactivates. Press q again to reactivate it, and just be careful not to get shot.
-2. New versions of the game may come out soon :)
-3. Any suggestions, questions, or comments are welcome.
-4. And, as always, have fun!
+2. The "tanks" are supposed to resemble [DJI's Robomaster S1](https://www.dji.com/robomaster-s1).
+3. New versions of the game may come out soon :)
+4. Any suggestions, questions, or comments are welcome.
+5. And, as always, have fun!
