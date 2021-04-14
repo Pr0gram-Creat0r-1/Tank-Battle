@@ -18,3 +18,13 @@ Additional Notes:
 3. New versions of the game may come out soon :)
 4. Any suggestions, questions, or comments are welcome.
 5. And, as always, have fun!
+
+Credits:
+1. https://stackoverflow.com/questions/29849138/while-loop-not-working-while-using-tkinter
+2. https://stackoverflow.com/questions/55069520/cant-play-mp3-file-using-winsound-on-windows
+3. https://stackoverflow.com/questions/42393916/how-can-i-play-multiple-sounds-at-the-same-time-in-pygame
+4. https://stackoverflow.com/questions/60434080/is-it-possible-to-remove-background-on-tkinter-image
+5. https://stackoverflow.com/questions/43400856/change-the-color-of-an-object-after-tkinter-has-been-initiated
+6. https://stackoverflow.com/questions/42593589/cant-access-global-variable-from-inside-a-function-in-python
+7. https://stackoverflow.com/questions/15753793/how-to-bind-spacebar-key-to-a-certain-method-in-tkinter-python
+8. https://stackoverflow.com/questions/39614027/list-available-font-families-in-tkinter
