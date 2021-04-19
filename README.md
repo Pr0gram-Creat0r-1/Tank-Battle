@@ -10,6 +10,7 @@ Game Sounds and Music (links will take you to the sites where I downloaded them 
 2. [Minecraft "oof" sound for when you or the enemy gets hit](https://orangefreesounds.com/minecraft-death-sound/)
 3. [Explosion sound for when your HP or the enemy's reaches 0](https://www.zapsplat.com/music/double-large-explosions-with-some-very-light-distortion/)
 4. [Star Wars blaster sound for when you or the enemy shoots](https://soundbible.com/470-Laser-Blaster.html)
+5. [winsound.Beep() for the "3 2 1 go" part at the beginning](https://docs.python.org/3/library/winsound.html)
 
 Additional Notes:
 1. There's a glitch where if your shield is on and you're facing one way (left or right) and you press the key to move in the opposite direction, the shield automatically deactivates. Press q again to reactivate it, and just be careful not to get shot.
