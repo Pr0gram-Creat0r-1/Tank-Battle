@@ -22,6 +22,8 @@ Credits:
 
 Explosion Images: https://scratch.mit.edu/projects/107636750
 
+Background remove tool used for explosion images: https://remove.bg
+
 Help with code:
 1. https://stackoverflow.com/questions/29849138/while-loop-not-working-while-using-tkinter
 2. https://stackoverflow.com/questions/55069520/cant-play-mp3-file-using-winsound-on-windows
