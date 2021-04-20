@@ -13,7 +13,7 @@ Game Sounds and Music (links will take you to the sites where I downloaded them 
 5. [winsound.Beep() for the "3 2 1 go" part at the beginning](https://docs.python.org/3/library/winsound.html)
 
 Additional Notes:
-1. There's a glitch where if your shield is on and you're facing one way (left or right) and you press the key to move in the opposite direction, the shield automatically deactivates. Press q again to reactivate it, and just be careful not to get shot.
+1. There's a glitch where if your shield is on and you're facing one way (left or right) and you press the key to move in the opposite direction, the shield automatically deactivates. Press q again to reactivate it, and just be careful not to get shot. (EDIT: fixed now).
 2. The "tanks" are supposed to resemble [DJI's Robomaster S1](https://www.dji.com/robomaster-s1).
 3. New versions and edits of the game may come out soon :)
 4. Any suggestions, questions, or comments are welcome.
@@ -33,3 +33,4 @@ Help with code:
 5. https://stackoverflow.com/questions/42593589/cant-access-global-variable-from-inside-a-function-in-python
 6. https://stackoverflow.com/questions/15753793/how-to-bind-spacebar-key-to-a-certain-method-in-tkinter-python
 7. https://stackoverflow.com/questions/39614027/list-available-font-families-in-tkinter
+8. https://stackoverflow.com/questions/46131369/how-to-stop-sound-in-pygame
