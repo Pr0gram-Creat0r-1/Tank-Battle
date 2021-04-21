@@ -1,4 +1,8 @@
 # Tank Battle Simulator
+How to play:
+1. Download zip folder
+2. Unzip it
+3. Use "import Tank_Battle_Simulator" in your python shell, or do some other method by using your command line.
 Instructions:
 1. Arrow keys to move
 2. Space key to fire (you can only fire forward)
