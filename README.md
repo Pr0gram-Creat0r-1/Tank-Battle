@@ -39,3 +39,5 @@ Help with code:
 6. https://stackoverflow.com/questions/15753793/how-to-bind-spacebar-key-to-a-certain-method-in-tkinter-python
 7. https://stackoverflow.com/questions/39614027/list-available-font-families-in-tkinter
 8. https://stackoverflow.com/questions/46131369/how-to-stop-sound-in-pygame
+9. https://stackoverflow.com/questions/3177969/how-to-resize-an-image-using-tkinter
+10. https://stackoverflow.com/questions/26479728/tkinter-canvas-image-not-displaying
