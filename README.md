@@ -4,6 +4,7 @@ How to play:
 1. Download zip folder
 2. Unzip it
 3. Use "import Tank_Battle" in your python shell, or do some other method by using your command line.
+
 Note: You MUST save the Tank_Battle folder directly to your local disk (C), so that the path to it becomes "C:\Tank_Battle". If you don't do this, your game will not work.
 
 Instructions:
@@ -43,3 +44,4 @@ Help with code:
 8. https://stackoverflow.com/questions/46131369/how-to-stop-sound-in-pygame
 9. https://stackoverflow.com/questions/3177969/how-to-resize-an-image-using-tkinter
 10. https://stackoverflow.com/questions/26479728/tkinter-canvas-image-not-displaying
+11. https://stackoverflow.com/questions/15839491/how-to-clear-tkinter-canvas
