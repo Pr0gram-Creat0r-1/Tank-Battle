@@ -3,7 +3,8 @@
 How to play:
 1. Download zip folder
 2. Unzip it
-3. Use "import Tank_Battle_Simulator" in your python shell, or do some other method by using your command line.
+3. Use "import Tank_Battle" in your python shell, or do some other method by using your command line.
+Note: You MUST save the Tank_Battle folder directly to your local disk (C), so that the path to it becomes "C:\Tank_Battle". If you don't do this, your game will not work.
 
 Instructions:
 1. Arrow keys to move
