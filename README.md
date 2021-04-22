@@ -1,4 +1,4 @@
-# Tank Battle Simulator
+#Tank Battle
 How to play:
 1. Download zip folder
 2. Unzip it
