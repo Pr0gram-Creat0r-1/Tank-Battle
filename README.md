@@ -1,6 +1,6 @@
 # Tank Battle
 
-How to play:
+How to install:
 1. Download zip folder
 2. Unzip it, save the folder to your local disk (C).
 3. Use "import Tank_Battle" in your python shell, or paste the Tank_Battle.py file path into your command line.
