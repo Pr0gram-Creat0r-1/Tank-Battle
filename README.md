@@ -2,10 +2,10 @@
 
 How to install:
 1. Download zip folder
-2. Unzip it, save the folder to your local disk (C).
+2. Unzip it, save the folder to your local disk (C:\).
 3. Use "import Tank_Battle" in your python shell, or paste the Tank_Battle.py file path into your command line.
 
-Note: You MUST save the Tank_Battle folder directly to your local disk (C), so that the path to it becomes "C:\Tank_Battle". If you don't do this, your game will not work, because it will not be able to find the sound files/images included in the folder.
+Note: You MUST save the Tank_Battle folder directly to your local disk (C:\), so that the path to it becomes "C:\Tank_Battle". If you don't do this, your game will not work, because it will not be able to find the sound files/images included in the folder.
 
 Instructions:
 1. Arrow keys to move
