@@ -22,10 +22,12 @@ Game Sounds and Music (links will take you to the sites where I downloaded them 
 
 Additional Notes:
 1. There's a glitch where if your shield is on and you're facing one way (left or right) and you press the key to move in the opposite direction, the shield automatically deactivates. Press q again to reactivate it, and just be careful not to get shot. (EDIT: fixed now).
-2. The "tanks" are supposed to resemble [DJI's Robomaster S1](https://www.dji.com/robomaster-s1).
-3. New versions and edits of the game may come out soon :)
-4. Any suggestions, questions, or comments are welcome.
-5. And, as always, have fun!
+2. If you want to save your scores, you'll have to do it manually. When the game ends, you can copy the score and paste it into your own text file. But, again, you'll have to manually do it - the game won't save your score. (Sorry! If it really bugs you, just say so and I will try to fix it).
+3. You will also have to manually close the program and reopen it if you want to play it again. (Again, if it irritates you, I can try fix it).
+4. The "tanks" are supposed to resemble [DJI's Robomaster S1](https://www.dji.com/robomaster-s1).
+5. New versions and edits of the game may come out soon :)
+6. Any suggestions, questions, or comments are welcome.
+7. And, as always, have fun!
 
 Credits:
 
