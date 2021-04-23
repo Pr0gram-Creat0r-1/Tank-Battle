@@ -34,6 +34,8 @@ enemy_head=canvas.create_polygon(765, 380, 742.5, 380, 742.5, 375, 730, 375, 730
 enemy_antenna=canvas.create_polygon(760, 370, 762.5, 362.5, 760, 362.5, 757.5, 370, fill='red', outline='')
 enemy_shield=canvas.create_polygon(720, 370, 715, 370, 712.5, 390, 715, 410, 720, 410, 717.5, 390, 730, 390, 730, 385, 717.5, 385, 720, 370, fill='yellow', outline='')
 enemy_parallel_shield=canvas.create_polygon(780, 370, 785, 370, 787.5, 390, 785, 410, 780, 410, 782.5, 390, 770, 390, 770, 385, 782.5, 385, 780, 370, fill='yellow', outline='')
+enemy_hit_square=canvas.create_rectangle(680, 20, 780, 40, fill='yellow', outline='')
+player_hit_square=canvas.create_rectangle(20, 20, 120, 40, fill='yellow', outline='')
 the_yeet_square=canvas.create_rectangle(200, 125, 600, 225, fill='green', outline='')
 instructions_one=canvas.create_text(400, 150, text='''TANK BATTLE SIMULATOR''', font=('Calibri', 24), fill='black')
 instructions_two=canvas.create_text(400, 200, text='''Press ENTER to start''', font=('Calibri', 16), fill='black')
@@ -42,9 +44,11 @@ player_hp=10
 timer=0
 ammo=80
 ammo_text=canvas.create_text(100, 50, text='Remaining Ammo: %s' % ammo, font=('Calibri', 12))
-player_hp_text=canvas.create_text(75, 25, text='Your HP: %s' % player_hp, font=('Calibri', 12))
+player_hp_text=canvas.create_text(70, 25, text='Your HP: %s' % player_hp, font=('Calibri', 12))
 enemy_hp_text=canvas.create_text(725, 25, text='Enemy HP: %s' % enemy_hp, font=('Calibri', 12))
 def controls(keys):
+    global enemy_hit_square
+    global player_hit_square
     global timer
     global is_shield
     global enemy_hp
@@ -165,6 +169,7 @@ def controls(keys):
                         laser=canvas.create_rectangle(canvas.coords(player_head)[4], canvas.coords(player_head)[5]-1.5, canvas.coords(player_head)[4]+400, canvas.coords(player_head)[5]-2, fill='green', outline='')
                         tk.update()
                         if canvas.itemcget(enemy_shield, 'fill')=='yellow' and canvas.coords(player_body)[2]<canvas.coords(enemy_body)[0] and canvas.coords(laser)[2]-20>=canvas.coords(enemy_head)[0] and canvas.coords(laser)[3]<=canvas.coords(enemy_body)[3] and canvas.coords(laser)[3]+6.5>=canvas.coords(enemy_head)[3]:
+                            canvas.itemconfig(enemy_hit_square, fill='red')
                             enemy_hp-=1
                             canvas.delete(enemy_hp_text)
                             enemy_hp_text=canvas.create_text(725, 25, text='Enemy HP: %s' % enemy_hp, font=('Calibri', 12))
@@ -181,17 +186,19 @@ def controls(keys):
                                 time.sleep(5)
                                 canvas.delete('all')
                                 you_win=canvas.create_rectangle(0,0,800,800, fill='green', outline='')
-                                you_win_text=canvas.create_text(400, 200, text='YOU WIN', font=('Calibri', 24), fill='red')
+                                you_win_text=canvas.create_text(400, 200, text='VICTORY', font=('Calibri', 24), fill='red')
                                 score_text=canvas.create_text(400, 400, text='''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((1000-(10-player_hp)-(80-ammo)), (200-timer), (1000-(10-player_hp)-(80-ammo))+(200-timer)), font=('Calibri', 12), fill='red')
-                                tk.clipboard_append('''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((1000-(10-player_hp)-(80-ammo)), (200-timer), (1000-(10-player_hp)-(80-ammo))+(200-timer)))
+                                tk.clipboard_append('''Results (game won):\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((1000-(10-player_hp)-(80-ammo)), (200-timer), (1000-(10-player_hp)-(80-ammo))+(200-timer)))
                                 tk.update()
                         time.sleep(0.1)
                         canvas.delete(laser)
+                        canvas.itemconfig(enemy_hit_square, fill='yellow')
                         tk.update()
                     elif colores=='yellow':
                         laser=canvas.create_rectangle(canvas.coords(player_parallel_head)[0], canvas.coords(player_parallel_head)[7]-1.5, canvas.coords(player_parallel_head)[0]-400, canvas.coords(player_parallel_head)[7]-2, fill='green', outline='')
                         tk.update()
                         if canvas.itemcget(enemy_parallel_shield, 'fill')=='yellow' and canvas.coords(player_body)[0]>canvas.coords(enemy_body)[2] and canvas.coords(laser)[0]+20<=canvas.coords(enemy_parallel_head)[4] and canvas.coords(laser)[3]<=canvas.coords(enemy_body)[3] and canvas.coords(laser)[3]+6.5>=canvas.coords(enemy_parallel_head)[3]:
+                            canvas.itemconfig(enemy_hit_square, fill='red')
                             enemy_hp-=1                            
                             canvas.delete(enemy_hp_text)
                             enemy_hp_text=canvas.create_text(725, 25, text='Enemy HP: %s' % enemy_hp, font=('Calibri', 12))
@@ -208,12 +215,13 @@ def controls(keys):
                                 time.sleep(5)
                                 canvas.delete('all')
                                 you_win=canvas.create_rectangle(0,0,800,800, fill='green', outline='')
-                                you_win_text=canvas.create_text(400, 200, text='YOU WIN', font=('Calibri', 24), fill='red')
-                                score_text=canvas.create_text(400, 400, text='''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((1000-(10-player_hp)-(80-ammo)), (200-timer), (1000-(10-player_hp)-(80-ammo))+(200-timer)), font=('Calibri', 12), fill='red')
+                                you_win_text=canvas.create_text(400, 200, text='VICTORY', font=('Calibri', 24), fill='red')
+                                score_text=canvas.create_text(400, 400, text='''Results (game won):\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((1000-(10-player_hp)-(80-ammo)), (200-timer), (1000-(10-player_hp)-(80-ammo))+(200-timer)), font=('Calibri', 12), fill='red')
                                 tk.clipboard_append('''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((1000-(10-player_hp)-(80-ammo)), (200-timer), (1000-(10-player_hp)-(80-ammo))+(200-timer)))
                                 tk.update()
                         time.sleep(0.1)
                         canvas.delete(laser)
+                        canvas.itemconfig(enemy_hit_square, fill='yellow')
                         tk.update()
                 ammo-=1
                 canvas.delete(ammo_text)
@@ -233,6 +241,8 @@ def play_za_sound():
         mixer.Channel(0).play(mixer.Sound(r"C:\Tank_Battle_Simulator\1-09. Battle (Shrine)- Original Soundtrack Ver..mp3"))
     tk.after(105000, play_za_sound)
 def start(key):
+    global enemy_hit_square
+    global player_hit_square
     global player_hp
     global enemy_hp
     global player_hp_text
@@ -276,6 +286,8 @@ def start(key):
         canvas.bind_all('<KeyPress-q>', controls)
         tk.after(1000, track_time)
         def ai_code():
+            global enemy_hit_square
+            global player_hit_square
             global timer
             global player_hp
             global enemy_hp
@@ -402,6 +414,7 @@ def start(key):
                             mixer.Channel(2).play(mixer.Sound(r"C:\Tank_Battle_Simulator\Laser Blaster-SoundBible.com-1388608841.mp3"))
                             tk.update()
                             if canvas.coords(enemy_body)[0]>canvas.coords(player_body)[2] and canvas.itemcget(player_shield, 'fill')=='yellow' and canvas.coords(enemy_laser)[0]+20<=canvas.coords(player_head)[4] and canvas.coords(enemy_laser)[3]<=canvas.coords(player_body)[3] and canvas.coords(enemy_laser)[3]+6.5>=canvas.coords(player_head)[1]:
+                                canvas.itemconfig(player_hit_square, fill='red')
                                 player_hp-=1
                                 canvas.delete(player_hp_text)
                                 player_hp_text=canvas.create_text(75, 25, text='Your HP: %s' % player_hp, font=('Calibri', 12))
@@ -420,16 +433,18 @@ def start(key):
                                     you_lose=canvas.create_rectangle(0,0,800,800, fill='black', outline='')
                                     you_lose_text=canvas.create_text(400, 200, text='DEFEAT', font=('Calibri', 24), fill='white')
                                     score_text=canvas.create_text(400, 400, text='''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))), font=('Calibri', 12), fill='white')
-                                    tk.clipboard_append('''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))))
+                                    tk.clipboard_append('''Results (game lost):\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))))
                                     tk.update()
                             time.sleep(0.1)
                             canvas.delete(enemy_laser)
+                            canvas.itemconfig(player_hit_square, fill='yellow')
                             tk.update()
                         elif canvas.itemcget(enemy_head, 'fill')=='yellow':
                             enemy_laser=canvas.create_rectangle(canvas.coords(enemy_parallel_head)[4], canvas.coords(enemy_parallel_head)[5]-1.5, canvas.coords(enemy_parallel_head)[4]+400, canvas.coords(enemy_parallel_head)[5]-2, fill='purple', outline='')
                             mixer.Channel(2).play(mixer.Sound(r"C:\Tank_Battle_Simulator\Laser Blaster-SoundBible.com-1388608841.mp3"))
                             tk.update()
                             if canvas.coords(enemy_body)[2]<canvas.coords(player_body)[0] and canvas.itemcget(player_parallel_shield, 'fill')=='yellow' and canvas.coords(enemy_laser)[2]-20>=canvas.coords(player_head)[0] and canvas.coords(enemy_laser)[3]<=canvas.coords(player_body)[3] and canvas.coords(enemy_laser)[3]+6.5>=canvas.coords(player_head)[1]:
+                                canvas.itemconfig(player_hit_square, fill= 'red')
                                 player_hp-=1
                                 canvas.delete(player_hp_text)
                                 player_hp_text=canvas.create_text(75, 25, text='Your HP: %s' % player_hp, font=('Calibri', 12))
@@ -448,10 +463,11 @@ def start(key):
                                     you_lose=canvas.create_rectangle(0,0,800,800, fill='black', outline='')
                                     you_lose_text=canvas.create_text(400, 200, text='DEFEAT', font=('Calibri', 24), fill='white')
                                     score_text=canvas.create_text(400, 400, text='''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))), font=('Calibri', 12), fill='white')
-                                    tk.clipboard_append('''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))))
+                                    tk.clipboard_append('''Results (game lost):\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))))
                                     tk.update()
                             time.sleep(0.1)
                             canvas.delete(enemy_laser)
+                            canvas.itemconfig(player_hit_square, fill='yellow')
                             tk.update()
                 elif choice=='shield':
                     if canvas.itemcget(enemy_head, 'fill')=='red':
@@ -643,6 +659,7 @@ def start(key):
                                 mixer.Channel(2).play(mixer.Sound(r"C:\Tank_Battle_Simulator\Laser Blaster-SoundBible.com-1388608841.mp3"))
                                 tk.update()
                                 if canvas.coords(enemy_body)[0]>canvas.coords(player_body)[2] and canvas.itemcget(player_shield, 'fill')=='yellow' and canvas.coords(enemy_laser)[0]+20<=canvas.coords(player_head)[4] and canvas.coords(enemy_laser)[3]<=canvas.coords(player_body)[3] and canvas.coords(enemy_laser)[3]+6.5>=canvas.coords(player_head)[1]:
+                                    canvas.itemconfig(player_hit_square, fill='red')
                                     player_hp-=1
                                     canvas.delete(player_hp_text)
                                     player_hp_text=canvas.create_text(75, 25, text='Your HP: %s' % player_hp, font=('Calibri', 12))
@@ -661,16 +678,18 @@ def start(key):
                                         you_lose=canvas.create_rectangle(0,0,800,800, fill='black', outline='')
                                         you_lose_text=canvas.create_text(400, 200, text='DEFEAT', font=('Calibri', 24), fill='white')
                                         score_text=canvas.create_text(400, 400, text='''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))), font=('Calibri', 12), fill='white')
-                                        tk.clipboard_append('''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))))
+                                        tk.clipboard_append('''Results (game lost):\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))))
                                         tk.update()
                                 time.sleep(0.1)
                                 canvas.delete(enemy_laser)
+                                canvas.itemconfig(player_hit_square, fill='yellow')
                                 tk.update()
                             elif canvas.itemcget(enemy_head, 'fill')=='yellow':
                                 enemy_laser=canvas.create_rectangle(canvas.coords(enemy_parallel_head)[4], canvas.coords(enemy_parallel_head)[5]-1.5, canvas.coords(enemy_parallel_head)[4]+400, canvas.coords(enemy_parallel_head)[5]-2, fill='purple', outline='')
                                 mixer.Channel(2).play(mixer.Sound(r"C:\Tank_Battle_Simulator\Laser Blaster-SoundBible.com-1388608841.mp3"))
                                 tk.update()
                                 if canvas.coords(enemy_body)[2]<canvas.coords(player_body)[0] and canvas.itemcget(player_parallel_shield, 'fill')=='yellow' and canvas.coords(enemy_laser)[2]-20>=canvas.coords(player_head)[0] and canvas.coords(enemy_laser)[3]<=canvas.coords(player_body)[3] and canvas.coords(enemy_laser)[3]+6.5>=canvas.coords(player_head)[1]:
+                                    canvas.itemconfig(player_hit_square, fill='red')
                                     player_hp-=1
                                     canvas.delete(player_hp_text)
                                     player_hp_text=canvas.create_text(75, 25, text='Your HP: %s' % player_hp, font=('Calibri', 12))
@@ -689,10 +708,11 @@ def start(key):
                                         you_lose=canvas.create_rectangle(0,0,800,800, fill='black', outline='')
                                         you_lose_text=canvas.create_text(400, 200, text='DEFEAT', font=('Calibri', 24), fill='white')
                                         score_text=canvas.create_text(400, 400, text='''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))), font=('Calibri', 12), fill='white')
-                                        tk.clipboard_append('''Results:\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))))
+                                        tk.clipboard_append('''Results (game lost):\n\nPoints Earned: %s\nTime Bonus: %s\nTotal Score: %s''' % ((50-enemy_hp), (200-timer), ((50-enemy_hp)+(200-timer))))
                                         tk.update()
                                     time.sleep(0.1)
                                 canvas.delete(enemy_laser)
+                                canvas.itemconfig(player_hit_square, fill='yellow')
                                 tk.update()
             tk.after(100, ai_code)
         tk.after(100, ai_code)
