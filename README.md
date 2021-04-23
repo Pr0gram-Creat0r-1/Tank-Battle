@@ -10,7 +10,7 @@ Note: You MUST save the Tank_Battle_Simulator folder directly to your local disk
 Instructions:
 1. Arrow keys to move
 2. Space key to fire (you can only fire forward)
-3. Press q to activate/deactivate a personal shield. You cannot fire if your shield is on.
+3. Press q to activate/deactivate your personal shield. You cannot fire if your shield is on. Also, the shield will only protect your front side.
 4. Destroy the other tank to win.
 
 Game Sounds and Music (links will take you to the sites where I downloaded them from):
@@ -21,7 +21,7 @@ Game Sounds and Music (links will take you to the sites where I downloaded them 
 5. [winsound.Beep() for the "3 2 1 go" part at the beginning](https://docs.python.org/3/library/winsound.html)
 
 Additional Notes:
-1. There's a glitch where if your shield is on and you're facing one way (left or right) and you press the key to move in the opposite direction, the shield automatically deactivates. Press q again to reactivate it, and just be careful not to get shot. (EDIT: fixed now).
+1. The graphics are kind of simple... when you shoot, it may look like it hits, even though the game doesn't count it as a hit. But don't shoot from too close or too far; you basically need to skewer the enemy all the way through for it to count, and your tank cannot be touching the enemy when it happens.
 2. If you want to save your scores, you'll have to do it manually. When the game ends, it will automatically copy the results, and you can paste it into your own text file. But, again, you'll have to manually do it - the game won't save your score. (Sorry! If it really bugs you, just say so and I will try to fix it).
 3. You will also have to manually close the program and reopen it if you want to play it again. (Again, if it irritates you, I can try fix it).
 4. The "tanks" are supposed to resemble [DJI's Robomaster S1](https://www.dji.com/robomaster-s1).
@@ -31,9 +31,9 @@ Additional Notes:
 
 Credits:
 
-Explosion Images: https://scratch.mit.edu/projects/107636750
+Explosion Image: https://scratch.mit.edu/projects/107636750
 
-Background remove tool used for explosion images: https://remove.bg
+Background remove tool used for explosion image: https://remove.bg
 
 Help with code:
 1. https://stackoverflow.com/questions/29849138/while-loop-not-working-while-using-tkinter
