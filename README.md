@@ -46,3 +46,4 @@ Help with code:
 8. https://stackoverflow.com/questions/46131369/how-to-stop-sound-in-pygame
 9. https://stackoverflow.com/questions/3177969/how-to-resize-an-image-using-tkinter
 10. https://stackoverflow.com/questions/26479728/tkinter-canvas-image-not-displaying
+11. https://stackoverflow.com/questions/15839491/how-to-clear-tkinter-canvas
