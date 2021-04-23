@@ -47,3 +47,4 @@ Help with code:
 9. https://stackoverflow.com/questions/3177969/how-to-resize-an-image-using-tkinter
 10. https://stackoverflow.com/questions/26479728/tkinter-canvas-image-not-displaying
 11. https://stackoverflow.com/questions/15839491/how-to-clear-tkinter-canvas
+12. https://stackoverflow.com/questions/579687/how-do-i-copy-a-string-to-the-clipboard
