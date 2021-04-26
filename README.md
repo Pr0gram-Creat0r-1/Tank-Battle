@@ -25,10 +25,11 @@ Additional Notes:
 1. The graphics are kind of simple... when you shoot, it may look like it hits, even though the game doesn't count it as a hit. But don't shoot from too close or too far; you basically need to skewer the enemy all the way through for it to count, and your tank cannot be touching the enemy when it happens.
 2. If you want to save your scores, you'll have to do it manually. When the game ends, it will automatically copy the results, and you can paste it into your own text file. But, again, you'll have to manually do it - the game won't save your score. (Sorry! If it really bugs you, just say so and I will try to fix it).
 3. You will also have to manually close the program and reopen it if you want to play it again. (Again, if it irritates you, I can try fix it).
-4. The "tanks" are supposed to resemble [DJI's Robomaster S1](https://www.dji.com/robomaster-s1).
-5. New versions and edits of the game may come out soon :)
-6. Any suggestions, questions, or comments are welcome.
-7. And, as always, have fun!
+4. If, at the end of the game, the shell gives you an error message saying "list index out of range", don't mind it, it usually happens but does not seem to interfere with the game's functioning.
+5. The "tanks" are supposed to resemble [DJI's Robomaster S1](https://www.dji.com/robomaster-s1).
+6. New versions and edits of the game may come out soon :)
+7. Any suggestions, questions, or comments are welcome.
+8. And, as always, have fun!
 
 Credits:
 
