@@ -3,8 +3,7 @@
 How to install:
 1. Download zip folder
 2. Unzip it (extract all), save the items to your local disk (C:\\).
-3. If there is a subfolder called "Tank_Battle_Simulator" in C:\Tank_Battle_Simulator, don't do anything with it; you can delete it if you want. The files used are only the ones outside the subfolder (the path to the subfolder is "C:\Tank_Battle_Simulator\Tank_Battle_Simulator").
-4. Right click on the Tank_Battle_Simulator.py file, then select "Edit with IDLE". Then, in IDLE, click "Run" and then select "Run module" (or you can just press the F5 key). This game was coded using Python 3.9.1, downloaded from https://python.org.
+3. Move the file called "Tank_Battle_Simulator.py" to "C:\Users\Your-Username\AppData\Local\Programs\Python\Python-version_number-32_or_64_bit" (example: "C:\Users\John\AppData\Local\Programs\Python\Python39-64"), but keep the rest of the files where they are.
 
 Note: You MUST save the Tank_Battle_Simulator folder directly to your local disk (C:\\), so that the path to it becomes "C:\Tank_Battle_Simulator". If you don't do this, your game will not work, because it will not be able to find the sound files/images included in the folder.
 
